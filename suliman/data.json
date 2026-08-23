@@ -1,0 +1,34 @@
+{
+  "title": { "ar": "شقة المهدية", "en": "Al Mahdiyah apartment", "ur": "المہدیہ فلیٹ" },
+  "coords": "24.665407,46.535894",
+  "phone": "966553102171",
+  "defaultLang": "ar",
+  "entrance": {
+    "image": "images/house.jpg",
+    "badge": { "ar": "الباب الأيسر", "en": "Left door", "ur": "بایاں دروازہ" },
+    "text": { "ar": "ادخل من الباب المحدد بالعلامة الخضراء (أقصى يسار المنزل).", "en": "Enter through the door marked in green (far left of the house).", "ur": "سبز نشان والے دروازے سے داخل ہوں (گھر کے بالکل بائیں طرف)۔" },
+    "label": { "ar": "ادخل من هنا", "en": "Enter here", "ur": "یہاں سے داخل ہوں" }
+  },
+  "outerDoor": {
+    "image": "images/gate.jpg",
+    "text": { "ar": "المفتاح موجود في الباب. لا تحتاج أن تطلب أحدًا.", "en": "The key is already in the door. No need to call.", "ur": "چابی دروازے میں لگی ہوئی ہے۔ کسی کو بلانے کی ضرورت نہیں۔" },
+    "keyDirection": "right",
+    "tip": { "ar": "لفّ المفتاح إلى اليمين لفتح الباب", "en": "Turn the key to the RIGHT to open", "ur": "دروازہ کھولنے کے لیے چابی دائیں طرف گھمائیں" },
+    "tipSub": { "ar": "عكس المعتاد", "en": "Opposite of the usual way", "ur": "عام طریقے کے برعکس" },
+    "label": { "ar": "المفتاح هنا", "en": "Key is here", "ur": "چابی یہاں ہے" }
+  },
+  "apartment": {
+    "image": "images/apartment-door.jpg",
+    "steps": [
+      { "ar": "امشِ إلى نهاية الممر", "en": "Walk to the end of the corridor", "ur": "راہداری کے آخر تک جائیں" },
+      { "ar": "اصعد إلى الدور الأول", "en": "Go up to the first floor", "ur": "پہلی منزل پر چڑھیں" },
+      { "ar": "أول باب تقابله هو باب الشقة", "en": "The first door you see is the apartment", "ur": "پہلا دروازہ ہی فلیٹ کا دروازہ ہے" }
+    ],
+    "label": { "ar": "باب الشقة", "en": "Apartment door", "ur": "فلیٹ کا دروازہ" }
+  },
+  "warnings": [
+    { "type": "ok", "text": { "ar": "أغلق الباب الخارجي فقط (اسحبه)", "en": "Just close the outer door (pull it shut)", "ur": "صرف باہر کا دروازہ بند کریں (کھینچ کر)" } },
+    { "type": "no", "text": { "ar": "لا تقفل الباب بالمفتاح من الخارج", "en": "Do NOT lock it with the key from outside", "ur": "باہر سے چابی سے تالا نہ لگائیں" } }
+  ],
+  "warningNote": { "ar": "لأن ذلك يمنع أهل المنزل من الخروج.", "en": "Locking it traps the family inside the yard.", "ur": "ورنہ گھر والے باہر نہیں نکل سکیں گے۔" }
+}

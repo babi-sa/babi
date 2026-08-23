@@ -1,0 +1,34 @@
+# بابي · babi
+
+رابط واحد يوصّل المندوب من الخريطة إلى باب الشقة — بالصور وبلغته (عربي / English / اردو).
+
+## الهيكل
+
+```
+t/                  القالب المشترك (لا يُعدَّل لكل عميل)
+  app.css, app.js   التصميم والمنطق — أي تحسين هنا ينعكس على كل العملاء فورًا
+  client-index.html غلاف صفحة العميل (يُنسخ كما هو)
+  data.template.json نموذج بيانات عميل جديد
+demo/               نموذج تجريبي ببيانات افتراضية
+suliman/            عميل حقيقي (مثال)
+new-client.ps1      أمر إنشاء عميل جديد
+```
+
+## عميل جديد في دقيقتين
+
+```powershell
+.\new-client.ps1 ahmad
+```
+
+ثم:
+1. ضع الصور الثلاث في `ahmad/images/` بأسماء `house.jpg` و`gate.jpg` و`apartment-door.jpg` (يُفضَّل أقل من 500KB للصورة).
+2. عدّل `ahmad/data.json` — كل نص له ثلاث لغات `ar` / `en` / `ur`.
+3. ارفع: `git add ahmad; git commit -m "client: ahmad"; git push`
+
+الرابط: `https://ahmad.babi.sa` أو `https://babi.sa/ahmad/`
+
+## ملاحظات على data.json
+- `keyDirection`: `"right"` أو `"left"` — اتجاه دوران المفتاح في الرسمة المتحركة.
+- `tip` و`tipSub`: اجعلهما `null` إن لم يكن هناك تنبيه للمفتاح.
+- `warnings`: قائمة؛ `type` إمّا `"ok"` (افعل) أو `"no"` (لا تفعل). تحذير `no` يظهر بالثلاث لغات معًا.
+- `demo: true` يُظهر شارة "نموذج تجريبي".

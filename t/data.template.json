@@ -1,0 +1,33 @@
+{
+  "title": { "ar": "شقة ___", "en": "___ apartment", "ur": "___ فلیٹ" },
+  "coords": "24.000000,46.000000",
+  "phone": "9665XXXXXXXX",
+  "defaultLang": "ar",
+  "entrance": {
+    "image": "images/house.jpg",
+    "badge": { "ar": "الباب الأيمن", "en": "Right door", "ur": "دایاں دروازہ" },
+    "text": { "ar": "ادخل من الباب المحدد بالعلامة الخضراء.", "en": "Enter through the door marked in green.", "ur": "سبز نشان والے دروازے سے داخل ہوں۔" },
+    "label": { "ar": "ادخل من هنا", "en": "Enter here", "ur": "یہاں سے داخل ہوں" }
+  },
+  "outerDoor": {
+    "image": "images/gate.jpg",
+    "text": { "ar": "اضغط الجرس وانتظر فتح الباب.", "en": "Ring the bell and wait for the door to open.", "ur": "گھنٹی بجائیں اور دروازہ کھلنے کا انتظار کریں۔" },
+    "keyDirection": "right",
+    "tip": null,
+    "tipSub": null,
+    "label": { "ar": "الباب الخارجي", "en": "Outer door", "ur": "باہر کا دروازہ" }
+  },
+  "apartment": {
+    "image": "images/apartment-door.jpg",
+    "steps": [
+      { "ar": "امشِ إلى نهاية الممر", "en": "Walk to the end of the corridor", "ur": "راہداری کے آخر تک جائیں" },
+      { "ar": "اصعد إلى الدور الأول", "en": "Go up to the first floor", "ur": "پہلی منزل پر چڑھیں" },
+      { "ar": "أول باب تقابله هو باب الشقة", "en": "The first door you see is the apartment", "ur": "پہلا دروازہ ہی فلیٹ کا دروازہ ہے" }
+    ],
+    "label": { "ar": "باب الشقة", "en": "Apartment door", "ur": "فلیٹ کا دروازہ" }
+  },
+  "warnings": [
+    { "type": "ok", "text": { "ar": "أغلق الباب الخارجي خلفك", "en": "Close the outer door behind you", "ur": "اپنے پیچھے باہر کا دروازہ بند کریں" } }
+  ],
+  "warningNote": null
+}
