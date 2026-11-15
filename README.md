@@ -25,7 +25,7 @@ new-client.ps1      أمر إنشاء عميل جديد
 2. عدّل `ahmad/data.json` — كل نص له ثلاث لغات `ar` / `en` / `ur`.
 3. ارفع: `git add ahmad; git commit -m "client: ahmad"; git push`
 
-الرابط: `https://ahmad.babi.sa` أو `https://babi.sa/ahmad/`
+الرابط: `https://babi-sa.com/ahmad/`
 
 ## ملاحظات على data.json
 - `keyDirection`: `"right"` أو `"left"` — اتجاه دوران المفتاح في الرسمة المتحركة.

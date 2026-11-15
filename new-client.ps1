@@ -17,4 +17,4 @@ Write-Host "تم إنشاء العميل: $Name" -ForegroundColor Green
 Write-Host "1) ضع الصور الثلاث في:  $Name\images\   (house.jpg, gate.jpg, apartment-door.jpg)"
 Write-Host "2) عدّل البيانات في:     $Name\data.json"
 Write-Host "3) ارفع:  git add $Name; git commit -m 'client: $Name'; git push"
-Write-Host "الرابط بعد الرفع:  https://$Name.babi.sa  أو  https://babi.sa/$Name/"
+Write-Host "الرابط بعد الرفع:  https://babi-sa.com/$Name/"

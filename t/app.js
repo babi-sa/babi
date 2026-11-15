@@ -93,7 +93,7 @@
     </section>
     ${warns ? `<section class="card warn" id="s5"><h2><span class="ico">${I.alert}</span><span>${U.h5}</span></h2>${warns}${D.warningNote ? `<p>${esc(tx(D.warningNote, l))}</p>` : ""}<div class="other">${others}</div></section>` : ""}
     <section class="card thanks">${I.heart}<p>${esc(tx(D.thanks, l) || U.thanks)}</p></section>
-    <div class="foot">${U.powered} <a href="https://babi.sa">بابي · babi</a></div>
+    <div class="foot">${U.powered} <a href="../">بابي · babi</a></div>
   </main>
 </div>
 <div class="bar">
