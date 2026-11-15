@@ -1,0 +1,94 @@
+{
+  "title": {
+    "ar": "بيت وليد",
+    "en": "Waleed's house",
+    "ur": "ولید کا گھر"
+  },
+  "coords": "18.2308987,42.4833654",
+  "phone": "966530510753",
+  "defaultLang": "ar",
+  "entrance": {
+    "image": "images/house.jpg",
+    "title": {
+      "ar": "شكل البيت",
+      "en": "The house",
+      "ur": "گھر کی پہچان"
+    },
+    "badge": {
+      "ar": "الباب الحديدي الأسود",
+      "en": "Black iron gate",
+      "ur": "کالا لوہے کا گیٹ"
+    },
+    "text": {
+      "ar": "بيت بلون طوبي، والباب الحديدي الأسود في وسط السور.",
+      "en": "A terracotta-colored house with a black iron gate in the middle of the wall.",
+      "ur": "اینٹ کے رنگ کا گھر، دیوار کے بیچ میں کالا لوہے کا گیٹ۔"
+    },
+    "label": {
+      "ar": "هذا البيت",
+      "en": "This house",
+      "ur": "یہ گھر"
+    }
+  },
+  "outerDoor": {
+    "image": "images/gate.jpg",
+    "title": {
+      "ar": "مكان التسليم",
+      "en": "Where to leave it",
+      "ur": "آرڈر کہاں رکھیں"
+    },
+    "text": {
+      "ar": "اترك الطلب عند هذا الباب.",
+      "en": "Leave the order at this gate.",
+      "ur": "آرڈر اس گیٹ کے پاس رکھ دیں۔"
+    },
+    "tip": null,
+    "tipSub": null,
+    "label": {
+      "ar": "ضع الطلب هنا",
+      "en": "Leave it here",
+      "ur": "یہاں رکھیں"
+    }
+  },
+  "apartment": {
+    "image": "images/apartment-door.jpg",
+    "title": {
+      "ar": "تسليم الطلب",
+      "en": "Delivering the order",
+      "ur": "آرڈر کی حوالگی"
+    },
+    "steps": [
+      {
+        "ar": "اترك الطلب عند الباب الحديدي الأسود",
+        "en": "Leave the order at the black iron gate",
+        "ur": "آرڈر کالے لوہے کے گیٹ کے پاس رکھیں"
+      },
+      {
+        "ar": "لا تدق الجرس",
+        "en": "Do not ring the bell",
+        "ur": "گھنٹی نہ بجائیں"
+      }
+    ],
+    "label": {
+      "ar": "المبنى",
+      "en": "The building",
+      "ur": "عمارت"
+    }
+  },
+  "warningTitle": {
+    "ar": "مهم جدًا",
+    "en": "Very important",
+    "ur": "بہت ضروری"
+  },
+  "warnings": [
+    {
+      "type": "no",
+      "text": {
+        "ar": "لا تدق الجرس",
+        "en": "Do NOT ring the bell",
+        "ur": "گھنٹی نہ بجائیں"
+      }
+    }
+  ],
+  "warningNote": null
+}

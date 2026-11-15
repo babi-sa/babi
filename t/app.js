@@ -80,19 +80,19 @@
       <a class="btn" id="mapsBtn" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(coords)}" target="_blank" rel="noopener">${I.nav}<span>${U.maps}</span></a>
       <div class="row"><button class="btn sm" id="copyBtn">${I.copy}<span>${U.copy}</span></button></div>
     </section>
-    <section class="card" id="s2"><h2><span class="ico">${I.home}</span><span>${U.h2}</span></h2>
+    <section class="card" id="s2"><h2><span class="ico">${I.home}</span><span>${esc(tx(D.entrance?.title, l)) || U.h2}</span></h2>
       <p>${D.entrance?.badge ? `<span class="badge">${I.check}<span>${esc(tx(D.entrance.badge, l))}</span></span> ` : ""}${esc(tx(D.entrance?.text, l))}</p>
       ${fig(D.entrance?.image, tx(D.entrance?.label, l))}
     </section>
-    <section class="card" id="s3"><h2><span class="ico">${I.key}</span><span>${U.h3}</span></h2>
+    <section class="card" id="s3"><h2><span class="ico">${I.key}</span><span>${esc(tx(D.outerDoor?.title, l)) || U.h3}</span></h2>
       <p>${esc(tx(D.outerDoor?.text, l))}</p>${tip}
       ${fig(D.outerDoor?.image, tx(D.outerDoor?.label, l))}
     </section>
-    <section class="card" id="s4"><h2><span class="ico">${I.door}</span><span>${U.h4}</span></h2>
+    <section class="card" id="s4"><h2><span class="ico">${I.door}</span><span>${esc(tx(D.apartment?.title, l)) || U.h4}</span></h2>
       <ul class="list">${steps}</ul>
       ${fig(D.apartment?.image, tx(D.apartment?.label, l))}
     </section>
-    ${warns ? `<section class="card warn" id="s5"><h2><span class="ico">${I.alert}</span><span>${U.h5}</span></h2>${warns}${D.warningNote ? `<p>${esc(tx(D.warningNote, l))}</p>` : ""}<div class="other">${others}</div></section>` : ""}
+    ${warns ? `<section class="card warn" id="s5"><h2><span class="ico">${I.alert}</span><span>${esc(tx(D.warningTitle, l)) || U.h5}</span></h2>${warns}${D.warningNote ? `<p>${esc(tx(D.warningNote, l))}</p>` : ""}<div class="other">${others}</div></section>` : ""}
     <section class="card thanks">${I.heart}<p>${esc(tx(D.thanks, l) || U.thanks)}</p></section>
     <div class="foot">${U.powered} <a href="../">بابي · babi</a></div>
   </main>
