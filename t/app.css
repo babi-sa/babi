@@ -103,3 +103,34 @@ html[data-theme="dark"] .card.warn{background:#1d2d5a}
 .toast{position:fixed;bottom:104px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 18px;border-radius:999px;font-weight:900;opacity:0;transition:.3s;pointer-events:none;z-index:40}
 .toast.show{opacity:1}
 .err{max-width:560px;margin:40px auto;padding:20px;text-align:center;color:var(--muted);font-weight:700}
+
+/* calm palette */
+:root{--sky:#3d5a80;--navy:#2b3f5c;--sun:#3d5a80;--bg:#f6f7f9;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--soft:#eef2f7;--ok:#4d8b6f;--ok-soft:#e8f2ec;--shadow:0 1px 3px rgba(17,24,39,.06),0 1px 2px rgba(17,24,39,.04);--hero-sub:#6b7280}
+html[data-theme="dark"]{--sky:#557399;--navy:#cbd5e1;--sun:#557399;--bg:#111418;--card:#1a1e24;--text:#e5e7eb;--muted:#9ca3af;--line:#2a2f37;--soft:#232a33;--ok:#7fbf9f;--ok-soft:#1f2d26;--shadow:none;--hero-sub:#9ca3af}
+.hero{background:var(--card);color:var(--text);border-bottom:1px solid var(--line);padding-bottom:56px}
+.hero .sun,.hero .cloud{display:none}
+.hero h1{margin-top:28px;font-size:30px}
+.hero .tag{background:var(--soft);border-color:var(--line);color:var(--muted)}
+.langs{background:var(--soft)}
+.langs button{color:var(--muted)}
+.langs button.active{background:var(--sky);color:#fff}
+#themeBtn{background:var(--soft);color:var(--text)}
+.sheet{margin-top:-28px}
+.btn{color:#fff;box-shadow:none}
+.btn.sm{background:var(--soft);color:var(--text)}
+.steps a span{box-shadow:none;border-color:var(--line)}
+.tip,html[data-theme="dark"] .tip{background:var(--soft);border:1px solid var(--line);color:var(--text)}
+.tip .keyAnim,.tip .arrow{color:var(--sky)}
+.card.warn{background:#fbeeed;color:#7a2e28;border:1px solid #f1d4d1}
+html[data-theme="dark"] .card.warn{background:#2a1d1c;color:#f0c9c5;border-color:#3d2a28}
+.card.warn h2{color:inherit}
+.card.warn h2 .ico{background:rgba(180,83,75,.12);color:#b4534b}
+.wline.ok svg{color:var(--ok)}.wline.no svg{color:#b4534b}
+.card.warn p{color:inherit;opacity:.8}
+.other{border-top-color:rgba(122,46,40,.2);color:inherit;opacity:.85}
+.card.thanks{background:var(--card)}
+.card.thanks svg{color:var(--ok)}
+.bar .wa{background:#4d8b6f}.bar .call{background:var(--sky)}
+.toast{background:var(--text);color:var(--card)}
+.mapbox{margin-bottom:10px;border-radius:14px;overflow:hidden;border:1px solid var(--line);height:190px;background:var(--soft)}
+.mapbox iframe{width:100%;height:100%;border:0;display:block}
