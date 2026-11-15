@@ -2,49 +2,244 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1e3a8a">
-<title>بابي — رابط واحد يوصّل المندوب لبابك</title>
-<meta property="og:title" content="بابي — رابط واحد يوصّل المندوب لبابك">
-<meta property="og:description" content="بدل 3 صور وموقع و4 رسائل شرح، أرسل رابطًا واحدًا بالخريطة والصور وبلغة المندوب.">
+<title>اطلب صفحتك — بابي</title>
+<meta property="og:title" content="بابي — خلّ المندوب يوصل لباب شقتك بدون اتصالات">
+<meta property="og:description" content="رابط واحد فيه الموقع والصور وطريقة الدخول، بلغة المندوب. اطلب صفحتك في دقيقتين.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&display=swap">
 <link rel="icon" href="t/icon.svg">
 <style>
+:root{--sky:#2563eb;--navy:#1e3a8a;--sun:#facc15;--bg:#f4f7fb;--card:#fff;--text:#0f172a;--muted:#52607a;--soft:#dbeafe;--ok:#16a34a;--no:#dc2626}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Cairo,"Segoe UI",system-ui,sans-serif;background:#f4f7fb;color:#0f172a;line-height:1.6}
-.hero{background:linear-gradient(180deg,#2563eb,#1e3a8a);color:#fff;padding:40px 24px 64px;text-align:center;position:relative;overflow:hidden}
-.hero .sun{position:absolute;top:-30px;inset-inline-start:-30px;width:160px;height:160px;border-radius:50%;background:#facc15;box-shadow:0 0 90px rgba(250,204,21,.5)}
-.hero h1{position:relative;font-size:42px;font-weight:900;line-height:1.1}
-.hero p{position:relative;color:#bfdbfe;font-size:18px;font-weight:700;max-width:520px;margin:12px auto 0}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:14px 28px;border-radius:999px;background:#facc15;color:#1e3a8a;font-weight:900;font-size:18px;text-decoration:none;margin-top:22px;position:relative;box-shadow:0 10px 24px rgba(250,204,21,.38)}
-.btn.ghost{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.4);box-shadow:none}
-main{max-width:760px;margin:-36px auto 0;padding:0 20px 60px;display:grid;gap:14px}
-.card{background:#fff;border-radius:22px;padding:20px;box-shadow:0 6px 18px rgba(30,58,138,.10)}
-.card h2{font-size:20px;font-weight:900;margin-bottom:6px}
-.card p{color:#52607a;font-weight:700}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
-.foot{text-align:center;color:#52607a;font-size:13px;font-weight:700;padding:20px}
+html{scroll-behavior:smooth}
+body{font-family:Cairo,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+svg{flex-shrink:0}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(170deg,#3b82f6 0%,var(--sky) 35%,var(--navy) 100%);color:#fff;padding:18px 0 0}
+.hero .sun{position:absolute;top:-60px;inset-inline-start:-60px;width:220px;height:220px;border-radius:50%;background:var(--sun);box-shadow:0 0 120px rgba(250,204,21,.6)}
+.cloud{position:absolute;background:#fff;border-radius:999px;opacity:.9}
+.cl1{top:70px;inset-inline-end:-30px;width:180px;height:46px}.cl2{top:92px;inset-inline-end:40px;width:140px;height:40px}
+.nav{position:relative;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:8px;font-weight:900;font-size:22px;text-decoration:none;color:#fff}
+.logo svg{width:34px;height:34px}
+.nav a.demo{font-size:14px;font-weight:700;color:#fff;text-decoration:none;background:rgba(255,255,255,.18);padding:7px 14px;border-radius:999px}
+.heroGrid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:end;padding-top:40px}
+.kicker{display:inline-block;background:rgba(250,204,21,.18);color:var(--sun);border:1px solid rgba(250,204,21,.45);border-radius:999px;padding:3px 14px;font-size:13px;font-weight:900}
+.hero h1{font-size:44px;font-weight:900;line-height:1.15;margin:14px 0 12px}
+.hero h1 em{font-style:normal;color:var(--sun)}
+.hero p.lead{font-size:18px;font-weight:700;color:#dbeafe;max-width:460px}
+.ctas{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 46px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:14px 28px;border-radius:999px;font-weight:900;font-size:18px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+.btn svg{width:22px;height:22px}
+.btn.primary{background:var(--sun);color:var(--navy);box-shadow:0 12px 28px rgba(250,204,21,.4)}
+.btn.ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.4)}
+.btn.wa{background:#22c55e;color:#fff}
+.btn:active{transform:scale(.98)}
+.phone{justify-self:center;width:270px;height:500px;background:#0b1222;border-radius:42px 42px 0 0;padding:12px 12px 0;box-shadow:0 -10px 50px rgba(0,0,0,.35);position:relative}
+.phone:before{content:"";position:absolute;top:20px;left:50%;transform:translateX(-50%);width:80px;height:20px;background:#0b1222;border-radius:999px;z-index:2}
+.screen{width:100%;height:100%;border-radius:32px 32px 0 0;overflow:hidden;background:#fff;position:relative}
+.screen iframe{border:0;width:390px;height:723px;transform:scale(.6205);transform-origin:top right;position:absolute;top:0;right:0;pointer-events:none}
+.live{position:absolute;bottom:14px;inset-inline-start:-14px;background:#fff;color:var(--navy);font-weight:900;font-size:13px;padding:8px 14px;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.2);display:flex;align-items:center;gap:6px;z-index:3}
+.live i{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.25)}
+section{padding:56px 0 0}
+.sh{text-align:center;margin-bottom:26px}
+.sh h2{font-size:30px;font-weight:900;line-height:1.25}
+.sh p{color:var(--muted);font-weight:700;font-size:16px;margin-top:6px}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.box{background:var(--card);border-radius:24px;padding:22px;box-shadow:0 6px 18px rgba(30,58,138,.08)}
+.box h3{font-size:18px;font-weight:900;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.box h3 span{font-size:12px;padding:3px 10px;border-radius:999px}
+.before h3 span{background:#fee2e2;color:var(--no)}
+.after{background:linear-gradient(160deg,#fff 0%,#eff6ff 100%);border:2px solid var(--sky)}
+.after h3 span{background:#dcfce7;color:var(--ok)}
+.chat{display:flex;flex-direction:column;gap:7px}
+.bub{align-self:flex-start;background:#e2e8f0;border-radius:16px 16px 16px 4px;padding:7px 12px;font-size:14px;font-weight:700;color:#334155;max-width:90%}
+.bub.me{align-self:flex-end;background:#dcf8c6;border-radius:16px 16px 4px 16px}
+.bub.ph{display:flex;gap:4px;padding:6px}
+.bub.ph b{width:42px;height:34px;border-radius:8px;background:#94a3b8}
+.after .bub.me{font-size:15px}
+.after .link{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #bfdbfe;border-radius:12px;padding:8px 10px;margin-top:6px;color:var(--sky);font-weight:900;direction:ltr;justify-content:flex-end}
+.after .link svg{width:16px;height:16px}
+.res{margin-top:14px;font-weight:900;font-size:15px;display:flex;align-items:center;gap:8px}
+.before .res{color:var(--no)}.after .res{color:var(--ok)}
+.res svg{width:20px;height:20px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step{background:var(--card);border-radius:24px;padding:22px;box-shadow:0 6px 18px rgba(30,58,138,.08);position:relative}
+.step .ic{width:52px;height:52px;border-radius:16px;background:var(--soft);color:var(--sky);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.step .ic svg{width:26px;height:26px}
+.step .num{position:absolute;top:18px;inset-inline-end:20px;font-size:40px;font-weight:900;color:#e2e8f0;line-height:1}
+.step h3{font-size:18px;font-weight:900}
+.step p{color:var(--muted);font-weight:700;font-size:15px}
+.step .time{display:inline-block;margin-top:10px;background:#fef9c3;color:#854d0e;font-size:12px;font-weight:900;border-radius:999px;padding:2px 10px}
+.prep{background:var(--card);border-radius:28px;padding:24px;box-shadow:0 6px 18px rgba(30,58,138,.08)}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.photo{border-radius:18px;overflow:hidden;background:var(--soft)}
+.photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.photo figcaption{padding:10px 12px;font-weight:900;font-size:14px;display:flex;align-items:center;gap:8px;background:#fff}
+.photo figcaption b{width:24px;height:24px;border-radius:50%;background:var(--sky);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.photo figcaption small{display:block;color:var(--muted);font-size:12px;font-weight:700}
+.extra{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.chip{display:flex;align-items:center;gap:10px;background:var(--bg);border-radius:16px;padding:12px 14px;font-weight:900;font-size:14px}
+.chip svg{width:24px;height:24px;color:var(--sky)}
+.chip small{display:block;color:var(--muted);font-weight:700;font-size:12px}
+.tipline{margin-top:14px;display:flex;align-items:center;gap:10px;background:#fef9c3;color:#713f12;border-radius:14px;padding:10px 14px;font-weight:700;font-size:14px}
+.tipline svg{width:22px;height:22px;color:#ca8a04}
+.feats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.feat{background:var(--card);border-radius:20px;padding:18px;text-align:center;box-shadow:0 6px 18px rgba(30,58,138,.08)}
+.feat svg{width:30px;height:30px;color:var(--sky);margin-bottom:6px}
+.feat h3{font-size:15px;font-weight:900}
+.feat p{font-size:13px;color:var(--muted);font-weight:700}
+.final{margin-top:56px;background:linear-gradient(160deg,var(--sky),var(--navy));color:#fff;border-radius:32px;padding:36px 24px;text-align:center;position:relative;overflow:hidden}
+.final .sun{position:absolute;bottom:-70px;inset-inline-end:-50px;width:200px;height:200px;border-radius:50%;background:var(--sun);opacity:.9}
+.final h2{position:relative;font-size:30px;font-weight:900;line-height:1.25}
+.final p{position:relative;color:#dbeafe;font-weight:700;margin:8px 0 22px}
+.final .ctas{position:relative;justify-content:center;margin:0}
+.foot{text-align:center;color:var(--muted);font-size:13px;font-weight:700;padding:28px 0 10px}
+.foot a{color:var(--sky);font-weight:900;text-decoration:none}
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-top:1px solid #e2e8f0;display:none;transform:translateY(110%);transition:transform .3s}
+.sticky.show{transform:none}
+.sticky .btn{width:100%;min-height:54px;font-size:17px}
+@media (max-width:760px){
+  .heroGrid{grid-template-columns:1fr;padding-top:26px;gap:0}
+  .hero h1{font-size:34px}
+  .hero p.lead{font-size:16px}
+  .ctas{margin:20px 0 30px}
+  .ctas .btn{flex:1 1 100%}
+  .phone{width:240px;height:400px}
+  .screen iframe{transform:scale(.5487)}
+  .ba,.steps{grid-template-columns:1fr}
+  .photos{gap:8px}
+  .photo figcaption{flex-direction:column;align-items:flex-start;gap:4px;font-size:13px;padding:8px}
+  .photo figcaption small{display:none}
+  .extra{grid-template-columns:1fr}
+  .feats{grid-template-columns:1fr 1fr}
+  .sh h2,.final h2{font-size:25px}
+  section{padding-top:44px}
+  .sticky{display:block}
+}
 </style>
 </head>
 <body>
+
 <header class="hero">
-  <div class="sun"></div>
-  <h1>بابي</h1>
-  <p>رابط واحد يوصّل المندوب من الخريطة إلى بابك — بالصور، وبلغته.</p>
-  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-    <a class="btn" href="demo/">شاهد نموذجًا حيًا</a>
-    <a class="btn ghost" href="order/">اطلب صفحتك</a>
+  <div class="sun"></div><div class="cloud cl1"></div><div class="cloud cl2"></div>
+  <div class="wrap">
+    <nav class="nav">
+      <a class="logo" href="./"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#facc15"/><rect x="22" y="16" width="20" height="32" rx="2" fill="#1e3a8a"/><circle cx="37" cy="33" r="2" fill="#facc15"/></svg>بابي</a>
+      <a class="demo" href="demo/">شاهد مثال</a>
+    </nav>
+    <div class="heroGrid">
+      <div>
+        <span class="kicker">لكل بيت وشقة</span>
+        <h1>خلّ المندوب يوصل <em>لباب شقتك</em> بدون ما يتصل</h1>
+        <p class="lead">رابط واحد فيه موقعك، وصور المدخل، وطريقة الدخول خطوة بخطوة. بلغة المندوب: عربي، English، اردو.</p>
+        <div class="ctas">
+          <a class="btn primary" href="https://tally.so/r/2ja2gb" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>اطلب صفحتك الآن</a>
+          <a class="btn ghost" href="#how">كيف تشتغل؟</a>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="screen"><iframe src="demo/" title="مثال صفحة بابي" loading="lazy" tabindex="-1"></iframe></div>
+        <div class="live"><i></i>صفحة حقيقية</div>
+      </div>
+    </div>
   </div>
 </header>
-<main>
-  <div class="grid">
-    <div class="card"><h2>بدون تطبيق</h2><p>المندوب يفتح الرابط ويبدأ. لا تسجيل ولا تحميل.</p></div>
-    <div class="card"><h2>بلغته</h2><p>عربي · English · اردو — تُختار تلقائيًا من جواله.</p></div>
-    <div class="card"><h2>حتى باب الشقة</h2><p>خريطة، ثم صورة المدخل، ثم الباب، ثم الشقة. خطوة خطوة.</p></div>
+
+<main class="wrap">
+
+  <section>
+    <div class="sh"><h2>بدل ما تشرح لكل مندوب من جديد…</h2><p>أرسل له رابطك، وخلّه يتبع الخطوات.</p></div>
+    <div class="ba">
+      <div class="box before">
+        <h3>الحين <span>كل مرة</span></h3>
+        <div class="chat">
+          <div class="bub">وين البيت بالضبط؟</div>
+          <div class="bub me">أرسلت لك الموقع 📍</div>
+          <div class="bub me ph"><b></b><b></b><b></b></div>
+          <div class="bub">أي باب أدخل منه؟</div>
+          <div class="bub me">الباب اليسار، بعدين اطلع الدور الأول…</div>
+          <div class="bub">ما فهمت، ممكن تتصل؟ 📞</div>
+        </div>
+        <div class="res"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>رسائل كثيرة، واتصالات، وانتظار</div>
+      </div>
+      <div class="box after">
+        <h3>مع بابي <span>رسالة وحدة</span></h3>
+        <div class="chat">
+          <div class="bub me">لو سمحت اتبع تعليمات الوصول هنا 👇
+            <div class="link">babi-sa.com/ahmad<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></div>
+          </div>
+          <div class="bub">وصلت، شكرًا 🙏</div>
+        </div>
+        <div class="res"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>يوصل الطلب لبابك وأنت مرتاح</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="sh"><h2>تحصل على صفحتك في 3 خطوات</h2><p>بدون تطبيق، وبدون تسجيل.</p></div>
+    <div class="steps">
+      <div class="step"><span class="num">1</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 14h6M9 17h4"/></svg></div>
+        <h3>عبّي نموذج الطلب</h3><p>موقعك، و3 صور، ورقمك، وشرح بسيط للطريق.</p><span class="time">دقيقتين</span></div>
+      <div class="step"><span class="num">2</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></div>
+        <h3>نجهّز صفحتك</h3><p>نرتّب الصور والخطوات ونترجمها للإنجليزي والأوردو.</p><span class="time">خلال 24 ساعة</span></div>
+      <div class="step"><span class="num">3</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg></div>
+        <h3>أرسل رابطك لأي مندوب</h3><p>يوصلك رابطك على الواتساب، واستخدمه مع كل طلب.</p><span class="time">دائم</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><h2>قبل ما تبدأ، جهّز هذي الصور</h2><p>صوّرها بجوالك، وبالنهار تكون أوضح.</p></div>
+    <div class="prep">
+      <div class="photos">
+        <figure class="photo"><img src="demo/images/house.svg" alt="صورة البيت من الشارع"><figcaption><b>1</b><span>البيت من الشارع<small>بحيث يبان الباب اللي يدخل منه</small></span></figcaption></figure>
+        <figure class="photo"><img src="demo/images/gate.svg" alt="صورة الباب الخارجي"><figcaption><b>2</b><span>الباب الخارجي<small>قريب، ويبان مكان المفتاح أو الجرس</small></span></figcaption></figure>
+        <figure class="photo"><img src="demo/images/door.svg" alt="صورة باب الشقة"><figcaption><b>3</b><span>باب الشقة<small>عشان يتأكد إنه وصل للمكان الصح</small></span></figcaption></figure>
+      </div>
+      <div class="extra">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>رابط موقعك<small>من خرائط Google ← مشاركة</small></span></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg><span>رقم الواتساب<small>يتواصل معك المندوب إذا احتاج</small></span></div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>اشرح الطريق بكلامك<small>ونحن نرتّبه ونترجمه</small></span></div>
+      </div>
+      <div class="tipline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg>عندك تنبيه خاص؟ مثل «المفتاح يفتح لليمين» أو «لا تقفل الباب» — اكتبه في النموذج ونبرزه للمندوب.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><h2>وش يشوف المندوب؟</h2><p>صفحة سريعة تفتح على أي جوال.</p></div>
+    <div class="feats">
+      <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><h3>بلغته</h3><p>عربي، English، اردو — تلقائيًا</p></div>
+      <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg><h3>ملاحة بضغطة</h3><p>Google Maps أو Waze</p></div>
+      <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-8 8"/></svg><h3>صور واضحة</h3><p>يكبّرها بلمسة</p></div>
+      <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><h3>تواصل مباشر</h3><p>زر واتساب واتصال</p></div>
+    </div>
+  </section>
+
+  <div class="final">
+    <div class="sun"></div>
+    <h2>جاهز؟ طلبك ياخذ دقيقتين</h2>
+    <p>عبّي النموذج، ويوصلك رابطك على الواتساب خلال 24 ساعة.</p>
+    <div class="ctas">
+      <a class="btn primary" href="https://tally.so/r/2ja2gb" target="_blank" rel="noopener">اطلب صفحتك الآن</a>
+      <a class="btn wa" id="waBtn" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg>عندك سؤال؟ كلمنا</a>
+    </div>
   </div>
-  <div class="card"><h2>كيف أحصل على صفحتي؟</h2><p>أرسل لنا موقعك من خرائط Google، و3 صور (الشارع، الباب الخارجي، باب الشقة)، ورقم واتساب، واشرح بالعامية كيف يوصل المندوب. تستلم رابطك خلال ساعات.</p></div>
+
+  <div class="foot">بابي · babi-sa.com · <a href="demo/">شاهد مثال كامل</a></div>
 </main>
-<div class="foot">بابي · babi-sa.com</div>
+
+<div class="sticky" id="sticky"><a class="btn primary" href="https://tally.so/r/2ja2gb" target="_blank" rel="noopener">اطلب صفحتك الآن</a></div>
+
+<script>
+document.getElementById("waBtn").href = "https://wa.me/966553102171?text=" + encodeURIComponent("السلام عليكم، عندي سؤال عن صفحة بابي");
+var st = document.getElementById("sticky"), heroCta = document.querySelector(".hero .ctas");
+new IntersectionObserver(function (e) { st.classList.toggle("show", !e[0].isIntersecting); }).observe(heroCta);
+</script>
 </body>
 </html>
