@@ -32,37 +32,55 @@
   },
   "outerDoor": null,
   "apartment": {
-    "image": null,
+    "image": "images/apartment-door.jpg",
     "title": {
-      "ar": "تسليم الطلب",
-      "en": "Delivering the order",
-      "ur": "آرڈر کی حوالگی"
+      "ar": "الوصول إلى الشقة",
+      "en": "Reach the apartment",
+      "ur": "فلیٹ تک پہنچیں"
     },
     "steps": [
       {
-        "ar": "لما توصل، أرسل واتساب أو اتصل",
-        "en": "When you arrive, send a WhatsApp or call",
-        "ur": "پہنچ کر واٹس ایپ کریں یا کال کریں"
+        "ar": "ادخل من الباب الخارجي (عليه السهم الأخضر)",
+        "en": "Enter through the outer door (under the green arrow)",
+        "ur": "باہر کے دروازے سے داخل ہوں (سبز تیر والا)"
       },
       {
-        "ar": "إذا ما أحد رد، دق الجرس",
-        "en": "If no one answers, ring the bell",
-        "ur": "اگر کوئی جواب نہ دے تو گھنٹی بجائیں"
+        "ar": "اصعد إلى الدور الأول",
+        "en": "Go up to the first floor",
+        "ur": "پہلی منزل پر چڑھیں"
+      },
+      {
+        "ar": "ضع الطلب عند باب الشقة",
+        "en": "Leave the order at the apartment door",
+        "ur": "آرڈر فلیٹ کے دروازے پر رکھ دیں"
       }
-    ]
+    ],
+    "label": {
+      "ar": "ضع الطلب هنا",
+      "en": "Leave it here",
+      "ur": "یہاں رکھیں"
+    }
   },
   "warningTitle": {
-    "ar": "إذا ما أحد رد",
-    "en": "If no one answers",
-    "ur": "اگر کوئی جواب نہ دے"
+    "ar": "مهم جدًا",
+    "en": "Very important",
+    "ur": "بہت ضروری"
   },
   "warnings": [
     {
       "type": "ok",
       "text": {
-        "ar": "دق الجرس",
-        "en": "Ring the bell",
-        "ur": "گھنٹی بجائیں"
+        "ar": "إذا كان الباب الخارجي مقفلًا، دق الجرس",
+        "en": "If the outer door is locked, ring the bell",
+        "ur": "اگر باہر کا دروازہ بند ہو تو گھنٹی بجائیں"
+      }
+    },
+    {
+      "type": "no",
+      "text": {
+        "ar": "لا تغلق الباب الخارجي عند خروجك",
+        "en": "Do NOT close the outer door when you leave",
+        "ur": "جاتے وقت باہر کا دروازہ بند نہ کریں"
       }
     }
   ],
