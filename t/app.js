@@ -2,17 +2,17 @@
 (async function () {
   const UI = {
     ar: { dir: "rtl", sub: "4 خطوات · بالصور · دقيقتان", st: ["الخريطة", "المدخل", "المفتاح", "الشقة", "تنبيه"],
-      h1: "الموقع", maps: "افتح خرائط Google", copy: "نسخ الإحداثيات", copied: "تم النسخ", hud: "هدهد", hudCopied: "تم نسخ الموقع — الصقه في البحث داخل هدهد", zoom: "تكبير",
+      h1: "الموقع", maps: "افتح خرائط Google", copy: "نسخ الإحداثيات", copied: "تم النسخ", hud: "هدهد", zoom: "تكبير",
       h2: "المدخل الصحيح", h3: "فتح الباب الخارجي", h4: "الوصول إلى الشقة", h5: "مهم جدًا عند المغادرة",
       thanks: "شكرًا جزيلًا على جهودك وتعاونك، نقدّر تعبك في إيصال الطلب حتى باب الشقة.", wa: "واتساب", call: "اتصال",
       powered: "صُنع بواسطة", demo: "نموذج تجريبي — البيانات افتراضية" },
     en: { dir: "ltr", sub: "4 steps · with photos · 2 minutes", st: ["Map", "Entrance", "Key", "Apartment", "Alert"],
-      h1: "Location", maps: "Open Google Maps", copy: "Copy coordinates", copied: "Copied", hud: "Hudhud", hudCopied: "Location copied — paste it in Hudhud search", zoom: "Zoom",
+      h1: "Location", maps: "Open Google Maps", copy: "Copy coordinates", copied: "Copied", hud: "Hudhud", zoom: "Zoom",
       h2: "The right entrance", h3: "Open the outer door", h4: "Reach the apartment", h5: "Very important when leaving",
       thanks: "Thank you so much for your effort. We truly appreciate you bringing the order all the way to our door.", wa: "WhatsApp", call: "Call",
       powered: "Made with", demo: "Demo page — sample data" },
     ur: { dir: "rtl", sub: "4 مراحل · تصاویر کے ساتھ · 2 منٹ", st: ["نقشہ", "داخلہ", "چابی", "فلیٹ", "انتباہ"],
-      h1: "مقام", maps: "Google Maps کھولیں", copy: "کوآرڈینیٹس کاپی کریں", copied: "کاپی ہو گیا", hud: "ہدہد", hudCopied: "مقام کاپی ہو گیا — ہدہد میں تلاش میں پیسٹ کریں", zoom: "بڑا کریں",
+      h1: "مقام", maps: "Google Maps کھولیں", copy: "کوآرڈینیٹس کاپی کریں", copied: "کاپی ہو گیا", hud: "ہدہد", zoom: "بڑا کریں",
       h2: "صحیح داخلی دروازہ", h3: "باہر کا دروازہ کھولیں", h4: "فلیٹ تک پہنچیں", h5: "جاتے وقت بہت ضروری",
       thanks: "آپ کی محنت اور تعاون کا بہت شکریہ۔ آرڈر فلیٹ کے دروازے تک پہنچانے پر ہم آپ کے ممنون ہیں۔", wa: "واٹس ایپ", call: "کال",
       powered: "بنایا گیا", demo: "نمونہ صفحہ — فرضی ڈیٹا" }
@@ -78,7 +78,7 @@
     <section class="card" id="s1"><h2><span class="ico">${I.pin}</span><span>${U.h1}</span></h2>
       <div class="mapbox"><iframe src="https://maps.google.com/maps?q=${encodeURIComponent(coords)}&z=17&output=embed" loading="lazy" title="map" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <a class="btn" id="mapsBtn" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(coords)}" target="_blank" rel="noopener">${I.nav}<span>${U.maps}</span></a>
-      <div class="row"><button class="btn sm" id="hudBtn">${I.pin}<span>${U.hud}</span></button><button class="btn sm" id="copyBtn">${I.copy}<span>${U.copy}</span></button></div>
+      <div class="row">${D.hudhud ? `<a class="btn sm" href="${esc(D.hudhud)}" target="_blank" rel="noopener">${I.pin}<span>${U.hud}</span></a>` : ""}<button class="btn sm" id="copyBtn">${I.copy}<span>${U.copy}</span></button></div>
     </section>
     <section class="card" id="s2"><h2><span class="ico">${I.home}</span><span>${U.h2}</span></h2>
       <p>${D.entrance?.badge ? `<span class="badge">${I.check}<span>${esc(tx(D.entrance.badge, l))}</span></span> ` : ""}${esc(tx(D.entrance?.text, l))}</p>
@@ -107,12 +107,6 @@
     $("#themeBtn").innerHTML = document.documentElement.dataset.theme === "dark" ? I.sun : I.moon;
     $("#themeBtn").onclick = () => { const n = document.documentElement.dataset.theme === "dark" ? "light" : "dark"; setTheme(n); localStorage.setItem("babi-theme", n); };
     $("#copyBtn").onclick = async () => { try { await navigator.clipboard.writeText(coords.replace(",", ", ")); toast(U.copied); } catch (e) { prompt("", coords); } };
-    $("#hudBtn").onclick = async () => {
-      if (/android/i.test(navigator.userAgent)) { location.href = "geo:" + coords + "?q=" + coords; return; }
-      try { await navigator.clipboard.writeText(coords); } catch (e) {}
-      toast(U.hudCopied);
-      setTimeout(() => { location.href = "https://apps.apple.com/app/id6477774492"; }, 1400);
-    };
     $("#mapsBtn").addEventListener("click", () => setTimeout(() => $("#s2").scrollIntoView({ behavior: "smooth" }), 800));
     $$("figure").forEach(f => f.onclick = () => { $("#lbImg").src = f.querySelector("img").src; $("#lb").classList.add("open"); });
     $("#lb").onclick = () => $("#lb").classList.remove("open");
