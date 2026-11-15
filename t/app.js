@@ -84,10 +84,10 @@
       <p>${D.entrance?.badge ? `<span class="badge">${I.check}<span>${esc(tx(D.entrance.badge, l))}</span></span> ` : ""}${esc(tx(D.entrance?.text, l))}</p>
       ${fig(D.entrance?.image, tx(D.entrance?.label, l))}
     </section>
-    <section class="card" id="s3"><h2><span class="ico">${I.key}</span><span>${esc(tx(D.outerDoor?.title, l)) || U.h3}</span></h2>
+    ${D.outerDoor ? `<section class="card" id="s3"><h2><span class="ico">${I.key}</span><span>${esc(tx(D.outerDoor?.title, l)) || U.h3}</span></h2>
       <p>${esc(tx(D.outerDoor?.text, l))}</p>${tip}
       ${fig(D.outerDoor?.image, tx(D.outerDoor?.label, l))}
-    </section>
+    </section>` : ""}
     <section class="card" id="s4"><h2><span class="ico">${I.door}</span><span>${esc(tx(D.apartment?.title, l)) || U.h4}</span></h2>
       <ul class="list">${steps}</ul>
       ${fig(D.apartment?.image, tx(D.apartment?.label, l))}
@@ -110,6 +110,7 @@
     $("#mapsBtn").addEventListener("click", () => setTimeout(() => $("#s2").scrollIntoView({ behavior: "smooth" }), 800));
     $$("figure").forEach(f => f.onclick = () => { $("#lbImg").src = f.querySelector("img").src; $("#lb").classList.add("open"); });
     $("#lb").onclick = () => $("#lb").classList.remove("open");
+    $$(".steps a").forEach(a => { if (!document.querySelector(a.getAttribute("href"))) a.style.display = "none"; });
     const secs = [...$$("main section[id]")], links = [...$$(".steps a")];
     const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id)); }), { rootMargin: "-35% 0px -50% 0px" });
     secs.forEach(s => io.observe(s));

@@ -1,0 +1,70 @@
+{
+  "title": {
+    "ar": "بيت سمية",
+    "en": "Somyah's house",
+    "ur": "سمیہ کا گھر"
+  },
+  "coords": "24.8383262,46.6823103",
+  "phone": "966530746737",
+  "defaultLang": "ar",
+  "entrance": {
+    "image": "images/house.jpg",
+    "title": {
+      "ar": "الباب الصحيح",
+      "en": "The right door",
+      "ur": "صحیح دروازہ"
+    },
+    "badge": {
+      "ar": "عليه السهم الأخضر",
+      "en": "Marked with the green arrow",
+      "ur": "سبز تیر والا"
+    },
+    "text": {
+      "ar": "الباب العريض اللي عليه السهم الأخضر، مو الباب الصغير اللي جنبه.",
+      "en": "The wide door under the green arrow — not the small door next to it.",
+      "ur": "سبز تیر کے نیچے والا چوڑا دروازہ — اس کے ساتھ والا چھوٹا دروازہ نہیں۔"
+    },
+    "label": {
+      "ar": "هذا الباب",
+      "en": "This door",
+      "ur": "یہ دروازہ"
+    }
+  },
+  "outerDoor": null,
+  "apartment": {
+    "image": null,
+    "title": {
+      "ar": "تسليم الطلب",
+      "en": "Delivering the order",
+      "ur": "آرڈر کی حوالگی"
+    },
+    "steps": [
+      {
+        "ar": "لما توصل، أرسل واتساب أو اتصل",
+        "en": "When you arrive, send a WhatsApp or call",
+        "ur": "پہنچ کر واٹس ایپ کریں یا کال کریں"
+      },
+      {
+        "ar": "إذا ما أحد رد، دق الجرس",
+        "en": "If no one answers, ring the bell",
+        "ur": "اگر کوئی جواب نہ دے تو گھنٹی بجائیں"
+      }
+    ]
+  },
+  "warningTitle": {
+    "ar": "إذا ما أحد رد",
+    "en": "If no one answers",
+    "ur": "اگر کوئی جواب نہ دے"
+  },
+  "warnings": [
+    {
+      "type": "ok",
+      "text": {
+        "ar": "دق الجرس",
+        "en": "Ring the bell",
+        "ur": "گھنٹی بجائیں"
+      }
+    }
+  ],
+  "warningNote": null
+}
