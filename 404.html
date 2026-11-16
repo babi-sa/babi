@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#ffffff">
-<title>الصفحة غير موجودة — بابي</title>
+<title>بابي</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap">
 <link rel="icon" href="/t/icon.svg">
@@ -14,21 +14,47 @@
 :root{--sky:#3d5a80;--bg:#f6f7f9;--text:#1f2937;--muted:#6b7280;--soft:#eef2f7;--ok:#4d8b6f}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Cairo,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px 16px;text-align:center}
-.box{max-width:420px}
-.box svg{width:64px;height:64px;margin-bottom:12px}
-h1{font-size:26px;font-weight:900}
-p{color:var(--muted);font-weight:700;margin:6px 0 20px;line-height:1.7}
-a{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;font-weight:900;text-decoration:none;margin-top:10px}
+.box{width:100%;max-width:420px}
+.box>svg{width:64px;height:64px;margin-bottom:12px}
+h1{font-size:26px;font-weight:900;line-height:1.35}
+.url{display:inline-block;direction:ltr;background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:6px 16px;margin:12px 0 4px;font-weight:900;color:var(--sky);overflow-wrap:anywhere}
+p{color:var(--muted);font-weight:700;margin:8px 0 18px;line-height:1.7}
+a.b{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;font-weight:900;text-decoration:none;margin-top:10px}
 .p{background:var(--sky);color:#fff}.w{background:var(--soft);color:var(--text)}
+.note{margin-top:22px;font-size:13px;font-weight:700;color:var(--muted);background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:10px 14px;line-height:1.7}
+.note b{color:var(--text)}
 </style>
 </head>
 <body>
 <div class="box">
   <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#3d5a80"/><rect x="22" y="16" width="20" height="32" rx="2" fill="#fff"/><circle cx="37" cy="33" r="2" fill="#3d5a80"/></svg>
-  <h1>الصفحة غير موجودة</h1>
-  <p>تأكد من كتابة الرابط صح: حروف إنجليزية صغيرة، مثل babi-sa.com/ahmad/</p>
-  <a class="p" href="/">الصفحة الرئيسية</a>
-  <a class="w" href="https://wa.me/966553102171" target="_blank" rel="noopener">تواصل معنا على الواتساب</a>
+  <div id="free" hidden>
+    <h1>هذا الرابط متاح</h1>
+    <div class="url" id="url"></div>
+    <p>ما أحد حجز هذا الاسم. تبيه رابط لبيتك؟</p>
+    <a class="b p" href="https://tally.so/r/2ja2gb" target="_blank" rel="noopener">اطلب صفحتك بهذا الاسم</a>
+    <a class="b w" href="/demo/">شوف مثال لصفحة جاهزة</a>
+    <div class="note"><b>مندوب توصيل؟</b> الرابط فيه خطأ أو الصفحة لسا ما جهزت. تواصل مع العميل.</div>
+  </div>
+  <div id="gone">
+    <h1>الصفحة غير موجودة</h1>
+    <p>تأكد من كتابة الرابط صح: حروف إنجليزية صغيرة، مثل babi-sa.com/ahmad/</p>
+    <a class="b p" href="/">الصفحة الرئيسية</a>
+    <a class="b w" href="https://wa.me/966553102171" target="_blank" rel="noopener">تواصل معنا على الواتساب</a>
+  </div>
 </div>
+<script>
+// رابط بشكل اسم (مثل /ahmad/): نعرضه كاسم متاح للحجز
+var parts = location.pathname.split("/").filter(Boolean);
+if (parts.length === 1 && /^[a-z0-9-]{2,40}$/i.test(parts[0])) {
+  var n = parts[0].toLowerCase();
+  document.getElementById("url").textContent = "babi-sa.com/" + n + "/";
+  document.getElementById("free").hidden = false;
+  document.getElementById("gone").hidden = true;
+  document.title = "babi-sa.com/" + n + " متاح — بابي";
+} else {
+  document.title = "الصفحة غير موجودة — بابي";
+}
+</script>
 </body>
 </html>
