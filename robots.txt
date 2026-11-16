@@ -1,0 +1,5 @@
+# بابي — صفحات العملاء خاصة: الصفحات عليها noindex، والصور والبيانات ممنوعة من الزحف
+User-agent: *
+Allow: /$
+Disallow: /*/images/
+Disallow: /*/data.json
