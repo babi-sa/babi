@@ -179,6 +179,13 @@ section{padding:56px 0 0}
 .price .amt{background:var(--soft);color:var(--text)}.price .cur{color:var(--sky)}.price .once{color:var(--muted)}
 .final{background:#fff;color:var(--text);border:1px solid #e5e7eb}.final p{color:var(--muted)}
 .price .was{font-size:18px;font-weight:700;color:var(--muted);text-decoration:line-through;margin-bottom:4px}
+/* جولة المعاينة */
+.screen a.tap{position:absolute;inset:0;z-index:2}
+.live{max-width:calc(100% + 14px);white-space:nowrap}
+.tryit{max-width:980px;margin:16px auto 0;padding:0 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+.tryit a{grid-column:2;justify-self:center;display:inline-flex;align-items:center;gap:8px;font-weight:900;font-size:15px;color:var(--sky);text-decoration:none;background:var(--soft);border:1px solid #e5e7eb;border-radius:999px;padding:10px 20px}
+.tryit svg{width:18px;height:18px}
+@media (max-width:760px){.tryit{grid-template-columns:1fr}.tryit a{grid-column:1}}
 </style>
 </head>
 <body>
@@ -201,12 +208,13 @@ section{padding:56px 0 0}
         </div>
       </div>
       <div class="phone">
-        <div class="screen"><iframe src="demo/" title="مثال صفحة بابي" loading="lazy" tabindex="-1"></iframe></div>
-        <div class="live"><i></i>صفحة حقيقية</div>
+        <div class="screen"><iframe src="demo/" title="مثال صفحة بابي" loading="lazy" tabindex="-1"></iframe><a class="tap" href="demo/" aria-label="جرّب صفحة المثال كأنك المندوب"></a></div>
+        <div class="live"><i></i><span id="cap">صفحة حقيقية</span></div>
       </div>
     </div>
   </div>
 </header>
+<div class="tryit"><a href="demo/">جرّبها كأنك المندوب<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a></div>
 
 <main class="wrap">
 
@@ -254,6 +262,42 @@ document.querySelectorAll("[data-copy]").forEach(function (b) { b.onclick = func
   var v = b.getAttribute("data-copy"), ok = function () { b.textContent = "تم النسخ"; b.classList.add("done"); setTimeout(function () { b.textContent = "نسخ"; b.classList.remove("done"); }, 2000); };
   if (navigator.clipboard) navigator.clipboard.writeText(v).then(ok, function () { prompt("", v); }); else prompt("", v);
 }; });
+
+// جولة تلقائية داخل جوال المعاينة: الخريطة ← البيت ← الباب ← الشقة ← التنبيهات ← اللغات
+(function () {
+  var f = document.querySelector(".screen iframe"), cap = document.getElementById("cap");
+  if (!f || !cap || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var steps = [
+    { s: "top", lang: "ar", t: "١ · الموقع على الخريطة" },
+    { s: "#s2", t: "٢ · صورة البيت" },
+    { s: "#s3", t: "٣ · الباب الخارجي" },
+    { s: "#s4", t: "٤ · الطريق لباب الشقة" },
+    { s: "#s5", t: "٥ · تنبيهات للمندوب" },
+    { s: "top", lang: "en", t: "بلغة المندوب · English" },
+    { s: "top", lang: "ur", t: "بلغة المندوب · اردو" }
+  ], i = 0, seen = true;
+  function doc() { try { return f.contentDocument; } catch (e) { return null; } }
+  function setLang(l) {
+    var d = doc(), b = d && d.querySelector('.langs button[data-lang="' + l + '"]');
+    if (!b || b.classList.contains("active")) return;
+    b.click();
+    try { f.contentWindow.localStorage.removeItem("babi-lang:" + f.contentWindow.location.pathname); } catch (e) {}
+  }
+  function go() {
+    var d = doc();
+    if (!d || !d.querySelector("main")) return setTimeout(tick, 800);
+    var st = steps[i]; i = (i + 1) % steps.length;
+    if (st.s !== "top" && !d.querySelector(st.s)) return go();
+    if (st.lang) setLang(st.lang);
+    var w = f.contentWindow, el = st.s === "top" ? null : d.querySelector(st.s);
+    w.scrollTo({ top: el ? el.getBoundingClientRect().top + w.scrollY - 70 : 0, behavior: "smooth" });
+    cap.textContent = st.t;
+    setTimeout(tick, 2600);
+  }
+  function tick() { if (seen && !document.hidden) go(); else setTimeout(tick, 1000); }
+  new IntersectionObserver(function (e) { seen = e[0].isIntersecting; }).observe(f);
+  setTimeout(tick, 1500);
+})();
 </script>
 </body>
 </html>
