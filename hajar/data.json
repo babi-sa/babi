@@ -1,0 +1,33 @@
+{
+  "title": { "ar": "بيت هاجر", "en": "Hajar's home", "ur": "ہاجر کا گھر" },
+  "coords": "24.6656211,46.5358634",
+  "phone": "966558207536",
+  "defaultLang": "ar",
+  "entrance": {
+    "image": "images/house.jpg",
+    "badge": { "ar": "الباب المحدد بالأخضر", "en": "Door marked in green", "ur": "سبز نشان والا دروازہ" },
+    "text": { "ar": "ادخل من الباب المحدد بالعلامة الخضراء في الصورة.", "en": "Enter through the door marked in green in the photo.", "ur": "تصویر میں سبز نشان والے دروازے سے داخل ہوں۔" },
+    "label": { "ar": "ادخل من هنا", "en": "Enter here", "ur": "یہاں سے داخل ہوں" }
+  },
+  "outerDoor": {
+    "image": "images/gate.jpg",
+    "text": { "ar": "افتح الباب الخارجي بالمفتاح.", "en": "Open the outer door with the key.", "ur": "باہر کا دروازہ چابی سے کھولیں۔" },
+    "keyDirection": "right",
+    "tip": null,
+    "tipSub": null,
+    "label": { "ar": "الباب الخارجي", "en": "Outer door", "ur": "باہر کا دروازہ" }
+  },
+  "apartment": {
+    "image": "images/apartment-door.jpg",
+    "steps": [
+      { "ar": "اصعد إلى الدور الأول", "en": "Go up to the first floor", "ur": "پہلی منزل پر جائیں" },
+      { "ar": "الباب اللي قدام الدرج هو باب الشقة", "en": "The door facing the stairs is the apartment", "ur": "سیڑھیوں کے سامنے والا دروازہ فلیٹ کا ہے" },
+      { "ar": "اترك الطلب عند باب الشقة", "en": "Leave the order at the apartment door", "ur": "آرڈر فلیٹ کے دروازے پر رکھ دیں" }
+    ],
+    "label": { "ar": "باب الشقة", "en": "Apartment door", "ur": "فلیٹ کا دروازہ" }
+  },
+  "warnings": [
+    { "type": "no", "text": { "ar": "بعد التسليم لا تقفل الباب بالمفتاح", "en": "After delivery, do NOT lock the door with the key", "ur": "ڈیلیوری کے بعد دروازے کو چابی سے تالا نہ لگائیں" } }
+  ],
+  "warningNote": null
+}
