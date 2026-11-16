@@ -1,4 +1,5 @@
 /* بابي — قالب صفحة تعليمات الوصول. يقرأ data.json من مجلد العميل ويبني الصفحة. */
+if (location.protocol === "http:" && location.hostname !== "localhost") location.replace("https:" + location.href.slice(5));
 (async function () {
   const UI = {
     ar: { dir: "rtl", sub: "4 خطوات · بالصور · دقيقتان", st: ["الخريطة", "المدخل", "المفتاح", "الشقة", "تنبيه"],
@@ -60,7 +61,7 @@
     const warns = (D.warnings || []).map(w => `<div class="wline ${w.type === "no" ? "no" : "ok"}">${w.type === "no" ? I.noLock : I.doorOk}<span>${esc(tx(w.text, l))}</span></div>`).join("");
     const mainWarn = (D.warnings || []).find(w => w.type === "no");
     const others = mainWarn ? LANGS.filter(k => k !== l).map(k => `<div dir="${UI[k].dir}">${esc(tx(mainWarn.text, k))}</div>`).join("") : "";
-    const fig = (img, label) => img ? `<figure><img src="${esc(img)}" alt="" loading="lazy">${label ? `<span class="label">${esc(label)}</span>` : ""}<span class="zoom">${I.zoom}<span>${U.zoom}</span></span></figure>` : "";
+    const fig = (img, label) => img ? `<figure><img src="${esc(img)}" alt="${esc(label || "")}" loading="lazy">${label ? `<span class="label">${esc(label)}</span>` : ""}<span class="zoom">${I.zoom}<span>${U.zoom}</span></span></figure>` : "";
     const keyDir = D.outerDoor?.keyDirection === "left" ? "left" : "right";
     const tip = D.outerDoor?.tip ? `<div class="tip"><span class="keyAnim ${keyDir}">${I.key}</span><div><b>${esc(tx(D.outerDoor.tip, l))}</b><small>${esc(tx(D.outerDoor.tipSub, l))}</small></div>${keyDir === "left" ? I.rotL : I.rotR}</div>` : "";
 

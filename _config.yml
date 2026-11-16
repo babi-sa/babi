@@ -1,0 +1,6 @@
+# GitHub Pages: ملفات داخلية لا تُنشر على الموقع
+exclude:
+  - README.md
+  - ROADMAP.md
+  - new-client.ps1
+  - message.ps1
