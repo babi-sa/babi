@@ -18,3 +18,4 @@ Write-Host "1) ضع الصور الثلاث في:  $Name\images\   (house.jpg, g
 Write-Host "2) عدّل البيانات في:     $Name\data.json"
 Write-Host "3) ارفع:  git add $Name; git commit -m 'client: $Name'; git push"
 Write-Host "الرابط بعد الرفع:  https://babi-sa.com/$Name/"
+Write-Host "4) بعد الرفع، رسالة التسليم للعميل:  .\message.ps1 $Name"
