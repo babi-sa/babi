@@ -46,6 +46,7 @@
   catch (e) { document.body.innerHTML = '<div class="err">تعذّر تحميل بيانات الصفحة.</div>'; return; }
 
   const LANGS = ["ar", "en", "ur"];
+  const LANG_KEY = "babi-lang:" + location.pathname;
   const tx = (o, l) => (o && typeof o === "object") ? (o[l] || o.ar || o.en || "") : (o || "");
   const phone = (D.phone || "").replace(/\D/g, "");
   const coords = D.coords || "";
@@ -103,7 +104,7 @@
 <div id="lb"><button aria-label="close">✕</button><img id="lbImg" alt=""></div>
 <div class="toast" id="toast"></div>`;
 
-    $$(".langs button").forEach(b => b.onclick = () => { localStorage.setItem("babi-lang", b.dataset.lang); build(b.dataset.lang); });
+    $$(".langs button").forEach(b => b.onclick = () => { try { localStorage.setItem(LANG_KEY, b.dataset.lang); } catch (e) {} build(b.dataset.lang); });
     $("#themeBtn").innerHTML = document.documentElement.dataset.theme === "dark" ? I.sun : I.moon;
     $("#themeBtn").onclick = () => { const n = document.documentElement.dataset.theme === "dark" ? "light" : "dark"; setTheme(n); localStorage.setItem("babi-theme", n); };
     $("#copyBtn").onclick = async () => { try { await navigator.clipboard.writeText(coords.replace(",", ", ")); toast(U.copied); } catch (e) { prompt("", coords); } };
@@ -120,6 +121,8 @@
 
   const hr = new Date().getHours();
   setTheme(localStorage.getItem("babi-theme") || ((hr >= 19 || hr < 6) ? "dark" : "light"));
-  const nav = (navigator.language || "en").slice(0, 2).toLowerCase();
-  build(localStorage.getItem("babi-lang") || (LANGS.includes(nav) ? nav : (D.defaultLang || "en")));
+  // اللغة: اختيار المندوب محفوظ لهذه الصفحة فقط، وإلا أول لغة مدعومة في جواله، وإلا الإنجليزي
+  let saved = null; try { saved = localStorage.getItem(LANG_KEY); } catch (e) {}
+  const navs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""]).map(x => String(x).slice(0, 2).toLowerCase());
+  build(LANGS.includes(saved) ? saved : (navs.find(x => LANGS.includes(x)) || "en"));
 })();
