@@ -1,0 +1,34 @@
+{
+  "title": { "ar": "بيت عبدالحكيم", "en": "Abdulhakim's home", "ur": "عبدالحکیم کا گھر" },
+  "coords": "24.7903674,46.7802032",
+  "phone": "966550280220",
+  "defaultLang": "ar",
+  "entrance": {
+    "image": "images/house.jpg",
+    "text": { "ar": "هذا شكل البيت من الشارع، وصورة الباب الخارجي في الخطوة التالية.", "en": "This is the house from the street. The outer door is shown in the next step.", "ur": "یہ گلی سے گھر کا منظر ہے۔ باہر کا دروازہ اگلے مرحلے میں دکھایا گیا ہے۔" },
+    "label": { "ar": "هذا البيت", "en": "This house", "ur": "یہ گھر" }
+  },
+  "outerDoor": {
+    "image": "images/gate.jpg",
+    "text": { "ar": "ادخل من هذا الباب.", "en": "Enter through this door.", "ur": "اس دروازے سے داخل ہوں۔" },
+    "keyDirection": "right",
+    "tip": null,
+    "tipSub": null,
+    "label": { "ar": "الباب الخارجي", "en": "Outer door", "ur": "باہر کا دروازہ" }
+  },
+  "apartment": {
+    "image": "images/apartment-door.jpg",
+    "steps": [
+      { "ar": "ادخل من الباب الخارجي", "en": "Enter through the outer door", "ur": "باہر کے دروازے سے داخل ہوں" },
+      { "ar": "اصعد إلى الدور الأول", "en": "Go up to the first floor", "ur": "پہلی منزل پر جائیں" },
+      { "ar": "الشقة على اليسار", "en": "The apartment is on the LEFT", "ur": "فلیٹ بائیں طرف ہے" },
+      { "ar": "اترك الطلب عند باب الشقة", "en": "Leave the order at the apartment door", "ur": "آرڈر فلیٹ کے دروازے پر رکھ دیں" }
+    ],
+    "label": { "ar": "باب الشقة", "en": "Apartment door", "ur": "فلیٹ کا دروازہ" }
+  },
+  "warningTitle": { "ar": "مهم بعد التسليم", "en": "Important after delivery", "ur": "ڈیلیوری کے بعد اہم" },
+  "warnings": [
+    { "type": "ok", "text": { "ar": "صوّر الأغراض بعد ما تحطها عند الباب", "en": "Take a photo of the order after you leave it at the door", "ur": "دروازے پر سامان رکھنے کے بعد اس کی تصویر لیں" } }
+  ],
+  "warningNote": null
+}
