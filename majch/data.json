@@ -1,0 +1,31 @@
+{
+  "title": { "ar": "مكتب الجميح", "en": "Al-Jomaih office", "ur": "الجمیح دفتر" },
+  "coords": "24.7810321,46.6620243",
+  "phone": "966553102171",
+  "defaultLang": "ar",
+  "entrance": {
+    "image": "images/house.jpg",
+    "title": { "ar": "مدخل المبنى", "en": "Building entrance", "ur": "عمارت کا دروازہ" },
+    "badge": { "ar": "مبنى أكاسيا", "en": "AKASIA building", "ur": "اکاسیا عمارت" },
+    "text": { "ar": "ادخل من المدخل الرئيسي للمكاتب، اسم المبنى أكاسيا (AKASIA).", "en": "Enter through the main office entrance of the AKASIA building.", "ur": "اکاسیا (AKASIA) عمارت کے مرکزی دفتری دروازے سے داخل ہوں۔" },
+    "label": { "ar": "ادخل من هنا", "en": "Enter here", "ur": "یہاں سے داخل ہوں" }
+  },
+  "outerDoor": null,
+  "apartment": {
+    "image": "images/apartment-door.jpg",
+    "title": { "ar": "الوصول إلى المكتب", "en": "Reach the office", "ur": "دفتر تک پہنچیں" },
+    "steps": [
+      { "ar": "اركب المصعد واضغط 1", "en": "Take the elevator and press 1", "ur": "لفٹ میں جائیں اور 1 دبائیں" },
+      { "ar": "اطلع من المصعد واتجه يسار", "en": "Exit the elevator and turn LEFT", "ur": "لفٹ سے نکل کر بائیں مڑیں" },
+      { "ar": "بعدها اتجه يمين", "en": "Then turn RIGHT", "ur": "پھر دائیں مڑیں" },
+      { "ar": "مكتب 107: قبل الأخير على اليسار", "en": "Office 107: the second to last on the LEFT", "ur": "دفتر 107: بائیں طرف آخری سے پہلے والا" }
+    ],
+    "label": { "ar": "باب المكتب 107", "en": "Office 107 door", "ur": "دفتر 107 کا دروازہ" }
+  },
+  "warningTitle": { "ar": "إذا ما رديت عليك", "en": "If I don't answer", "ur": "اگر میں جواب نہ دوں" },
+  "warnings": [
+    { "type": "ok", "text": { "ar": "دق الباب، لو أحد من العمال موجود بياخذ الطلب", "en": "Knock on the door; if a staff member is there, they will take the order", "ur": "دروازہ کھٹکھٹائیں، اگر عملے کا کوئی فرد ہو تو وہ آرڈر لے لے گا" } },
+    { "type": "ok", "text": { "ar": "ما فيه أحد؟ حط الطلب عند الباب وصوّره", "en": "No one there? Leave the order at the door and take a photo", "ur": "کوئی نہیں؟ آرڈر دروازے پر رکھیں اور تصویر لیں" } }
+  ],
+  "warningNote": null
+}
