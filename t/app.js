@@ -46,6 +46,18 @@ if (location.protocol === "http:" && location.hostname !== "localhost") location
   try { D = await (await fetch("data.json", { cache: "no-cache" })).json(); }
   catch (e) { document.body.innerHTML = '<div class="err">تعذّر تحميل بيانات الصفحة.</div>'; return; }
 
+  // صفحة موقوفة (عدم الدفع): رسالة محايدة للمندوب بدون أي بيانات للعميل
+  if (D.locked) {
+    document.title = "بابي";
+    document.body.innerHTML = '<div class="locked">' +
+      '<svg viewBox="0 0 64 64" width="64" height="64"><circle cx="32" cy="32" r="30" fill="#3d5a80"/><rect x="22" y="16" width="20" height="32" rx="2" fill="#fff"/><circle cx="37" cy="33" r="2" fill="#3d5a80"/></svg>' +
+      '<h1>هذه الصفحة غير متاحة حاليًا</h1>' +
+      '<p dir="ltr">This page is currently unavailable.</p>' +
+      '<p dir="rtl" class="ur">یہ صفحہ فی الحال دستیاب نہیں ہے۔</p>' +
+      '<a href="https://babi-sa.com/">babi-sa.com</a></div>';
+    return;
+  }
+
   const LANGS = ["ar", "en", "ur"];
   const LANG_KEY = "babi-lang:" + location.pathname;
   const tx = (o, l) => (o && typeof o === "object") ? (o[l] || o.ar || o.en || "") : (o || "");

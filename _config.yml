@@ -4,3 +4,4 @@ exclude:
   - ROADMAP.md
   - new-client.ps1
   - message.ps1
+  - lock.ps1
